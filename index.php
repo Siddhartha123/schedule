@@ -23,10 +23,14 @@ th,td{
 	vertical-align: middle;
 }
 </style>
+<script>
+var w = window.innerWidth;
+var h = window.innerHeight;
+</script>
 <body>
 
-<form action="schedule_new.php" method="POST">
-
+<form method="POST" action="schedule_new.php">
+<input id="mobile" name="mobile" type="hidden" value="hi">
 <div class="row">
 	<div class="col-sm-6">
   <div class="white-box">
@@ -61,8 +65,7 @@ th,td{
 </table>
 </div></div></div>
 <div class="col-sm-6">
-                        <div class="white-box">
-													<h2 class="box-title">Laboratory Courses</h2>
+                        <div class="white-box">									<h2 class="box-title">Laboratory Courses</h2>
                             <div class="table-responsive">
                                 <table class="table color-bordered-table info-bordered-table">
 <thead><tr><th>Slot</th><th>Subject</th></tr></thead>
@@ -107,18 +110,12 @@ $('#mainTable').editableTableWidget().numericInputExample().find('td:first').foc
 $('#editable-datatable').editableTableWidget().numericInputExample().find('td:first').focus();
   $(document).ready(function(){
       $('#editable-datatable').DataTable();
-
-
-
   });
-
 </script>
 <!--Style Switcher -->
 <script src="./assets/styleswitcher/jQuery.style.switcher.js"></script>
 <!-- jQuery peity -->
     <script src="./assets/peity/jquery.peity.min.js"></script>
     <script src="./assets/peity/jquery.peity.init.js"></script>
-
-
 </body>
 </html>

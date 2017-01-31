@@ -98,12 +98,5 @@ foreach ($_POST as $slot=>$subject)
 
   }
 }
+header("Location:./schedule.csv");
 ?>
-<!doctype html>
-<title>
-NITR Central Time Table
-</title>
-<body>
-<?php echo "Your sequence is : ".$sequence."<br>";?>
-</body>
-</html>

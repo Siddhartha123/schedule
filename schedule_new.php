@@ -1,12 +1,15 @@
 <?php
 require 'db_connect.php';
+session_start();
 $con=@mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysql_error());
 $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_error());
 
 if(!empty($_POST['TJ']) or !empty($_POST['TK']) or !empty($_POST['TL']) or !empty($_POST['TM']))
-$sequence="pt";
+    $sequence="pt";
 elseif (!empty($_POST['TA']) or !empty($_POST['TB']) or !empty($_POST['TC']) or !empty($_POST['TD']))
-$sequence="tp";
+    $sequence="tp";
+else
+    header("Location:./");
 $query = mysql_query("SELECT * FROM timetable_$sequence") or die(mysql_error());
 if(empty($_POST['PX']) && !empty($_POST['PY']))
     $var="PY";
@@ -17,23 +20,13 @@ else
     $table=array();
 while($row=mysql_fetch_assoc($query))
 {
-  /*if(sizeof($table)==2 ||)
-  {
-    if(in_array($var,$row) || $var==123)
-      array_push($table,$row);
-  }
-  else
-    array_push($table,$row);
-*/
     if(in_array("PX",$row) && $sequence=="tp")
         array_push($table,$row);
     else if(in_array("PY",$row) && $sequence=="pt")
         array_push($table,$row);
     else if(!in_array("PX",$row) && !in_array("PY",$row))
         array_push($table,$row);
-
 }
-$tutorial=array("TA"=>"SA","TB"=>"SB","TC"=>"SC","TD"=>"TG1","TE"=>"TG2","TF"=>"TG3","TJ"=>"SJ","TK"=>"SK","TL"=>"SL","TM"=>"SM","TG"=>1);
 foreach ($_POST as $slot=>$subject)
 {
   if(!empty($subject))
@@ -47,7 +40,7 @@ foreach ($_POST as $slot=>$subject)
         elseif($slot[0]=="T" && $table[$i][$j]==$tutorial[$slot])
         {
           if(isset($_POST["C".$slot]))
-            $table[$i][$j]=$subject."(Tutorial)";
+            $table[$i][$j]=$subject." (Tutorial)";
           else
             $table[$i][$j]="";
         }
@@ -66,6 +59,8 @@ foreach ($_POST as $slot=>$subject)
     }
   }
 }
+$_SESSION['table']=$table;
+$_SESSION['subject']=$subject;
 ?>
 <!-- Font Awesome CSS -->
 <link href="./assets/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -85,41 +80,67 @@ foreach ($_POST as $slot=>$subject)
 NITR Central Time Table
 </title>
 <style>
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th
+{
+padding:1.4vh 8px;
+}
+th,td{
+	text-align:center;
+}
+table{
+  table-layout: fixed;
+}
+.table>tbody>tr>td{
+	vertical-align: middle;
+}
 .wrap{
      white-space: pre;
 }
 </style>
 <body>
   <div class="col-sm-12">
-            <div class="white-box">
+            
               <h3 class="box-title m-b-0">Time Table</h3>
               <p class="text-muted m-b-20">Your sequence is <?php echo strtoupper($sequence) ?></p>
               <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table  table-bordered">
+                  <thead>
+                  <tr>
+                    <?php
+                    echo "<td></td>";
+                    for($i=0;$i<9;$i=$i+1)
+                    {
+                      $j=$i+1;
+                      echo "<th>$time[$i]"."-"."$time[$j]</th>";
+                    } ?>
+                  </tr>
+                </thead>
+                <tbody>
 <?php
 $f=0;
 for($i=0;$i<5;$i=$i+1)
 {
   echo "<tr>";
+  echo "<td>$day[$i]</td>";
   for($j=1;$j<10;$j=$j+1)
   {
     if($table[$i][$j]==23 && $f==0)
     {
-      echo "<td class=\"wrap\" rowspan=5>";
+      echo "<td class=\"wrap\" rowspan=5 col width=\"50px\">";
 echo "
-  L
+L
 
 
-  U
+U
 
 
-  N
+N
 
 
-  C
+C
 
 
-  H
+H
       ";
       echo "</td>";
       $f=1;
@@ -134,11 +155,14 @@ echo "
   }
   echo "</tr>\n";
 }
+
  ?>
+ </tbody>
 </table>
 </div>
 </div>
-</div>
+
+<h5 class="box-title">For schedule in CSV format <a href="./schedule_csv.php">click here</a>.</h5>
 <!-- jQuery -->
 <script src="./assets/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
