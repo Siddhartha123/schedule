@@ -40,27 +40,27 @@ var h = window.innerHeight;
 	<thead><tr><th>Slot</th><th>Subject</th><th>Tutorial</th></tr></thead>
 	<tbody>
 	<tr><td>TA</td><td><input class="form-control" type="text" name ="TA"></td><td><div class="checkbox checkbox-success">
-    <input type="checkbox" name="CTA"><label></label></div></td></tr>
+    <input type="checkbox" name="CTA"><label>Tutorial</label></div></td></tr>
 	<tr><td>TB</td><td><input class="form-control" type="text" name ="TB"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTB"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTB"><label>Tutorial</label></div></td></tr>
 	<tr><td>TC</td><td><input class="form-control" type="text" name ="TC"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTC"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTC"><label>Tutorial</label></div></td></tr>
 	<tr><td>TD</td><td><input class="form-control" type="text" name ="TD"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTD"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTD"><label>Tutorial</label></div></td></tr>
 	<tr><td>TE</td><td><input class="form-control" type="text" name ="TE"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTE"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTE"><label>Tutorial</label></div></td></tr>
 	<tr><td>TF</td><td><input class="form-control" type="text" name ="TF"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTF"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTF"><label>Tutorial</label></div></td></tr>
 	<tr><td>TG</td><td><input class="form-control" type="text" name ="TG"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTG"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTG"><label>Tutorial</label></div></td></tr>
 	<tr><td>TJ</td><td><input class="form-control" type="text" name ="TJ"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTJ"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTJ"><label>Tutorial</label></div></td></tr>
 	<tr><td>TK</td><td><input class="form-control" type="text" name ="TK"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTK"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTK"><label>Tutorial</label></div></td></tr>
 	<tr><td>TL</td><td><input class="form-control" type="text" name ="TL"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTL"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTL"><label>Tutorial</label></div></td></tr>
 	<tr><td>TM</td><td><input class="form-control" type="text" name ="TM"></td><td><div class="checkbox checkbox-success">
-		<input type="checkbox" name ="CTM"><label></label></div></td></tr>
+		<input type="checkbox" name ="CTM"><label>Tutorial</label></div></td></tr>
 </tbody>
 </table>
 </div></div></div>
