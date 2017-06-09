@@ -7,4 +7,4 @@ format:
     &state={STATE}
 
 example:
-https://app.cronofy.com/oauth/authorize?response_type=code&client_id=GyhJvCQ1_bww5Cz84H2fwP8WUdQeiCWg&redirect_uri=https://teratogenic-ballast.000webhostapp.com/getCode.php&scope=create_event&state=testing
+https://app.cronofy.com/oauth/authorize?response_type=code&client_id=GyhJvCQ1_bww5Cz84H2fwP8WUdQeiCWg&redirect_uri=https://teratogenic-ballast.000webhostapp.com/signin.php&scope=create_event&state=testing
