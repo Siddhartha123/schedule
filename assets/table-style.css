@@ -1,6 +1,10 @@
-
+@font-face {
+    font-family: 'Roboto';
+    src: url(./Roboto/Roboto-Light.ttf);
+}
     table{
-        border: 2px solid #00c292!important;
+        border: 3px solid #00c292!important;
+        font-family: 'Roboto';
     }
     table td, table th { 
         text-align: center; 
@@ -29,7 +33,8 @@
     }
     
     .table-bordered>thead>tr>td,.table-bordered>thead>tr>th{
-        background-color: #00c292!important;
+   
+        border: 3px solid #00c292!important;
     }
 
     .wrap{ 
