@@ -59,6 +59,8 @@ foreach ($_POST as $slot=>$subject)
 }
 $_SESSION['table']=$table;
 $_SESSION['subject']=$subject;
+
+
 ?>
 
 
@@ -81,7 +83,7 @@ NITR Central Time Table
                   <tr>
                     <?php
                     echo "<td></td>";
-                    for($i=0;$i<9;$i=$i+1)
+                    for($i=0;$i<10;$i=$i+1)
                     {
                       $j=$i+1;
                       echo "<th>$time[$i]"."-"."$time[$j]</th>";
@@ -95,7 +97,7 @@ for($i=0;$i<5;$i=$i+1)
 {
   echo "<tr>";
   echo "<td>$day[$i]</td>";
-  for($j=1;$j<10;$j=$j+1)
+  for($j=1;$j<11;$j=$j+1)
   {
     if($table[$i][$j]==23 && $f==0)
     {
@@ -135,7 +137,6 @@ H
 </div>
 </div>
 
-<!--<h5 class="box-title">For schedule in CSV format <a href="./schedule_csv.php">click here</a>.</h5> -->
-
+<h5 class="box-title">To add this time table to your favourite calendar, <a href="https://app.cronofy.com/oauth/authorize?response_type=code&client_id=GyhJvCQ1_bww5Cz84H2fwP8WUdQeiCWg&redirect_uri=https://teratogenic-ballast.000webhostapp.com/auth.php&scope=create_event" target="_blank">click here</a>.</h5>
 </body>
 </html>

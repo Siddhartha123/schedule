@@ -26,10 +26,14 @@
 </style>
 
 <body>
-
+<div class="container-fluid">
+    <div class="row text-center">
+        <h1>NITR Central Time Table</h1>
+    </div>
+    <div class="row">
     <form method="POST" action="schedule_new.php">
-        <div class="container-fluid">
-            <div class="row">
+        
+            
                 <div class="col-md-6">
                     <h2 class="box-title">Theory Courses</h2>
                     <div class="table-responsive">
@@ -254,20 +258,21 @@
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
+            
+       
         <div class="row">
 
             <div class="form-group text-center ">
-                <div class="col-md-12">
-                    <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" name="submit" type="submit">GO</button>
+                <div class="col-md-6 col-md-offset-3">
+                    <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" name="submit" type="submit">View Time Table</button>
                 </div>
             </div>
 
         </div>
 
     </form>
-
+ </div>
+    </div>
     <!-- jQuery -->
     <script src="../CYBORGNEW/plugins/browser_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->

@@ -20,4 +20,6 @@ $timetable_tp = array(
   array('1' => 'TC','2' => 'TD','3' => 'TA','4' => 'TG','5' => '23','6' => 'PC','7' => 'PC','8' => 'PC','9' => 'TF','10' => 'C1'),
   array('1' => 'TD','2' => 'TA','3' => 'TB','4' => 'TE','5' => '23','6' => 'PD','7' => 'PD','8' => 'PD','9' => 'TG','10' => 'A3')
 );
+
+$data=array("client_id"=> "GyhJvCQ1_bww5Cz84H2fwP8WUdQeiCWg","client_secret"=> "WtQKZ6MUjSafU7O0It9h8vQb6lUJ_JPJqYmpvmTxicFWKRfLjfd6dcN5NU76fhAv-cX-7N3etuvzK89bFc5P0A","grant_type"=> "authorization_code","redirect_uri"=> "https://teratogenic-ballast.000webhostapp.com/auth.php");
 ?>
