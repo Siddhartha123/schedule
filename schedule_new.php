@@ -62,16 +62,26 @@ $_SESSION['subject']=$subject;
 
 
 ?>
-
+<html>
 
 <link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="./assets/bootstrap/dist/js/bootstrap.min.js">
+<script src="./assets/jquery.min.js"></script>  
+<script src="./assets/bootstrap/dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="./assets/table-style.css">
+
 <!doctype html>
 <title>
 NITR Central Time Table
 </title>
-
+<style>
+    .modal-content {
+  border-radius: 0px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+    .modal{
+        font-family: Roboto !important;
+    }
+    </style>
 <body>
   <div class="col-sm-12">
 
@@ -137,6 +147,46 @@ H
 </div>
 </div>
 
-<h5 class="box-title">To add this time table to your favourite calendar, <a href="https://app.cronofy.com/oauth/authorize?response_type=code&client_id=GyhJvCQ1_bww5Cz84H2fwP8WUdQeiCWg&redirect_uri=https://teratogenic-ballast.000webhostapp.com/auth.php&scope=create_event" target="_blank">click here</a>.</h5>
+<h5 class="box-title">To add this time table to your favourite calendar, <button data-toggle="modal" data-target="#myModal">click here</button>.</h5>
+<!--    href="https://app.cronofy.com/oauth/authorize?response_type=code&client_id=GyhJvCQ1_bww5Cz84H2fwP8WUdQeiCWg&redirect_uri=https://teratogenic-ballast.000webhostapp.com/auth.php&scope=create_event" target="_blank"-->
+    
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Enter details</h4>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="./calendarInit.php">
+            <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input id="date_cal" data-toggle="tooltip" title="Enter the date till which you want to add events to your calendar" type="text" class="form-control" name="date" placeholder="YYYY-MM-DD">
+                </div>
+            </div>
+            </div>
+          
+          <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+        
+    </div>
+
+  </div>
+</div>
 </body>
+    <script>
+    
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+  
 </html>
