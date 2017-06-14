@@ -44,13 +44,13 @@ function deleteAllEvents(){
     $data=array("delete_all"=>"true");
     $d=json_encode($data);
     $ch = curl_init('https://api.cronofy.com/v1/events/');
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $d);                                                    
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array( 
     'Authorization: Bearer '.$_SESSION['access_token'],
-    'Content-Type: application/json',                                                                   
-    'Content-Length: ' . strlen($d))                                                           
+    'Content-Type: application/json;charset=utf-8',
+    'Content-Length: ' . strlen($d)),
     );
     curl_exec($ch);
     if(curl_getinfo($ch ,CURLINFO_HTTP_CODE)=="202")
