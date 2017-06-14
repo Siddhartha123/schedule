@@ -18,9 +18,7 @@ else
     $table=array();
 if($sequence=="pt"){
     foreach($timetable_pt as $row){
-        if(in_array("PX",$row) && $sequence=="tp")
-            array_push($table,$row);
-        else if(in_array("PY",$row) && $sequence=="pt")
+        if(in_array("PY",$row))
             array_push($table,$row);
         else if(!in_array("PX",$row) && !in_array("PY",$row))
             array_push($table,$row);
@@ -29,9 +27,7 @@ if($sequence=="pt"){
 
 else{
     foreach($timetable_tp as $row){
-        if(in_array("PX",$row) && $sequence=="tp")
-            array_push($table,$row);
-        else if(in_array("PY",$row) && $sequence=="pt")
+        if(in_array("PX",$row))
             array_push($table,$row);
         else if(!in_array("PX",$row) && !in_array("PY",$row))
             array_push($table,$row);
