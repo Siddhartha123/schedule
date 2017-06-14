@@ -16,14 +16,26 @@ else if(!empty($_POST['PX']) && empty($_POST['PY']))
 else
     $var=123;
     $table=array();
-foreach($timetable_pt as $row)
-{
-    if(in_array("PX",$row) && $sequence=="tp")
-        array_push($table,$row);
-    else if(in_array("PY",$row) && $sequence=="pt")
-        array_push($table,$row);
-    else if(!in_array("PX",$row) && !in_array("PY",$row))
-        array_push($table,$row);
+if($sequence=="pt"){
+    foreach($timetable_pt as $row){
+        if(in_array("PX",$row) && $sequence=="tp")
+            array_push($table,$row);
+        else if(in_array("PY",$row) && $sequence=="pt")
+            array_push($table,$row);
+        else if(!in_array("PX",$row) && !in_array("PY",$row))
+            array_push($table,$row);
+    }
+}
+
+else{
+    foreach($timetable_tp as $row){
+        if(in_array("PX",$row) && $sequence=="tp")
+            array_push($table,$row);
+        else if(in_array("PY",$row) && $sequence=="pt")
+            array_push($table,$row);
+        else if(!in_array("PX",$row) && !in_array("PY",$row))
+            array_push($table,$row);
+    }
 }
 foreach ($_POST as $slot=>$subject)
 {
