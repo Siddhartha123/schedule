@@ -166,8 +166,14 @@ H
             <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label>Date</label>
-                    <input id="date_cal" data-toggle="tooltip" title="Enter the date till which you want to add events to your calendar" type="text" class="form-control" name="date" placeholder="YYYY-MM-DD">
+                    <label>Start Date</label>
+                    <input data-toggle="tooltip" title="Enter the date from which you want to start adding events to your calendar" type="text" class="form-control" name="start_date" placeholder="YYYY-MM-DD">
+                    <p>Please enter date in the following format : <code>YYYY-MM-DD</code></p>
+                </div>
+                 <div class="form-group">
+                    <label>End Date</label>
+                    <input data-toggle="tooltip" title="Enter the date till which you want to add events to your calendar" type="text" class="form-control" name="end_date" placeholder="YYYY-MM-DD">
+                     <p>Please enter date in the following format : <code>YYYY-MM-DD</code></p>
                 </div>
             </div>
             </div>

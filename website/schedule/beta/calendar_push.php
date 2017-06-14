@@ -13,6 +13,11 @@ if(empty($_POST['d'])){
     <script src="./assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <body>
     <style>
+    body{
+    font-family:Roboto !important;
+    background-image:url(./assets/bg.png);
+    background-repeat:repeat-x;
+    }
     .table>tbody>tr>td{
     vertical-align:middle !important;
     }
@@ -20,14 +25,15 @@ if(empty($_POST['d'])){
     <div class="container-fluid">
     <div class="row">
     <div class="col-md-10 col-md-offset-1">
-    <p>The following events will be added to your '.$_SESSION['calendar'][0]['provider_name'].' calendar till '.$_SESSION['end_date'].'</p></div>
+    <p>The following events will be added to your '.$_SESSION['calendar'][0]['provider_name'].' calendar from '.$_SESSION['start_date'].' to '.$_SESSION['end_date'].'</p></div>
     </div>';
     echo '<div class="row"><div class="col-md-6 col-md-offset-3">';
     echo '<table class="table table-bordered">';
     $k=-1;
     foreach($_SESSION["events"] as $wday){
         $k++;
-        echo '<tr><td rowspan='.(sizeof($wday)+1).'>'.$day[$k].'</td>';
+        if(!empty($wday))
+            echo '<tr><td rowspan='.(sizeof($wday)+1).'>'.$day[$k].'</td>';
         foreach($wday as $event){
             echo '<tr><td>'.$event["event_name"].": ".$event["start"]." to ".$event["end"]."</td></tr>"; 
         }
@@ -47,6 +53,7 @@ if(empty($_POST['d'])){
             d:"b326b5062b2f0e69046810717534cb09"
         },function(data, status){
             console.log(data);
+            $("#s").html("Done !");
         });
     });
 </script>';
@@ -54,7 +61,6 @@ if(empty($_POST['d'])){
     elseif($_POST["d"]==md5("true")){
         include './cronofyAPI.php';
         $_SESSION['cal_id']=$_SESSION['calendar'][0]['calendar_id'];
-        echo "done";//add calendar event addition code here;
         $k=-1;
         deleteAllEvents();
         die();
@@ -62,7 +68,7 @@ if(empty($_POST['d'])){
         $k++;
         foreach($wday as $event){
             $i=0;
-            $start_date=date('Y-m-d', strtotime("next ".$day[$k]));
+            $start_date=date('Y-m-d', strtotime("next ".$day[$k],strtotime("-1 day",strtotime($_SESSION['start_date']))));
             $date=$start_date;
             while((strtotime($_SESSION['end_date'])-strtotime($date))>0)
                   {
