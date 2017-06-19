@@ -41,10 +41,10 @@ function createEvent($event,$desc,$start,$end){
 }
 
 function deleteAllEvents(){
-    $data=array("calendar_ids"=>$_SESSION['cal_id']);
+    $data=array("delete_all"=>true);
     $d=json_encode($data);
     $ch = curl_init('https://api.cronofy.com/v1/events');
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $d);                                                    
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array( 

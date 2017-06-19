@@ -9,12 +9,6 @@ elseif (!empty($_POST['TA']) or !empty($_POST['TB']) or !empty($_POST['TC']) or 
 else
     header("Location:./");
 
-if(empty($_POST['PX']) && !empty($_POST['PY']))
-    $var="PY";
-else if(!empty($_POST['PX']) && empty($_POST['PY']))
-    $var="PX";
-else
-    $var=123;
     $table=array();
 if($sequence=="pt"){
     foreach($timetable_pt as $row){
