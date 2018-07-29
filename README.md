@@ -9,3 +9,4 @@ The directory **v2.0** is the latest working website.
  1.  **Obtain OAuth 2.0 credentials from the Google API Console.**
 Visit the  [Google API Console](https://console.developers.google.com/)  to obtain OAuth 2.0 credentials such as a client ID and client secret.
 2. In the file "**website/v2.0/calendar_push.php**" put your client ID and API key wherever mentioned.
+3. clone this repository into your server directory and visit **<your_url>/schedule/website/v2.0**
