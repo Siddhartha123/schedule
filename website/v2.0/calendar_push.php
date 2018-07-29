@@ -27,8 +27,8 @@ foreach($_SESSION['events'] as $week){
     }
 }
 ?>
-      var CLIENT_ID = '567879953755-3762eeavdo2pjsh6e6hm9ig0gmrdifkj.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyD5o2ottSLoJtVE7Yx3lUtOBT6DrF_WdZM';
+      var CLIENT_ID = '<your client id goes here>';
+      var API_KEY = '<your api key goes here>';
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
       var SCOPES = "https://www.googleapis.com/auth/calendar";
       
